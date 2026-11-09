@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1 style="text-align: center;">Мои задачи</h1>
+    <div class="top1">
+        <a class="add1" href="/">+ Добавить задачу</a>
+    </div>
+    <div class="h2">
+        
+        {% for task in tasks %}
+        <div class="div1">
+        <h2 class="h1">{{ task.title }}</h2>
+        <p class="p1">{{ task.caption }}</p>
+        <button class="bh"><a href="/show_task_id/{{ task.id }}" style="color: white; text-decoration: none;">Подробнее</a></button>
+
+            
+        </div>
+        {% endfor %}
+        
+    </div>
+
+</body>
+</html>

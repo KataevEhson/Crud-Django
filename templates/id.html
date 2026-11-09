@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <h1 style="text-align: center;">Мои задачи</h1>
+    <div class="alt1">
+        <h2 class="h1">{{ task.title }}</h2>
+        <p class="p1">{{ task.caption }}</p>
+        <p>{{task.due_date}}</p>
+
+        <div class="buttons1">
+            <button class="b2" type="button">Изменить</button>
+            <form class="form2" method="POST">
+                {% csrf_token %}
+                <button class="b3" type="submit">Удалить</button>
+            </form>
+            <a class="b4" href="/show_tasks">Назад</a>
+        </div>
+
+    </div>
+
+</body>
+</html>
